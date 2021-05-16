@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{% block title_page %}Продукт {{ data.name }}{% endblock %}
+
+{% block content %}
+
+	<div class="container-xl space">
+		<ul class="list-group list-group-flush">
+		    <li class="list-group-item"><h2>{{ data.name }}</h2></li>
+		    <li class="list-group-item space"><h4>Описание: </h4>{{ data.description }}</li>
+		    <li class="list-group-item">
+			    <form class="row row-cols-lg-auto g-3 align-items-center" method="post" action="/order/{{ data.id }}">
+					<div class="col-12">
+					<div class="input-group">
+						<input type="text" class="form-control" name="phone" placeholder="Номер телефона">
+					</div>
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-dark">Купить за {{ data.price }}</button>
+				</div>
+				</form>
+		    </li>
+		</ul>
+	</div>
+
+{% endblock %}

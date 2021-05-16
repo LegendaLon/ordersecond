@@ -1,0 +1,20 @@
+{% extends 'template.html' %}
+
+{% block title_page %}Главная страница{% endblock %}
+
+
+{% block content %}
+
+	<div class="container-xl">
+		{% if data %}
+			{% for product in data.products %}
+				{% include 'include_product.html' %}
+			{% endfor %}
+		{% else %}
+			{% for product in global_data.allproduct %}
+				{% include 'include_product.html' %}
+			{% endfor %}
+		{% endif %}
+	</div>
+
+{% endblock %}

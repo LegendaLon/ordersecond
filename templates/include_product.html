@@ -1,0 +1,15 @@
+<div class="row section-row">
+	{% if product.images %}
+		<div class="col-3">
+			<img src="/static/img/{{ product.images }}" class="img-thumbnail">
+		</div>
+	{% endif %}
+	<div class="col">
+		<h4>{{ product.name }}</h4>
+		<p>{{ product.description }}</p>
+		<p>{% if not data %}Раздел: {{ product.category }}{% endif %}</p>
+	</div>
+	<div class="col-2">
+		<a href="/{{ product.id }}" class="list-group-item list-group-item-action">Детальніше</a>
+	</div>
+</div>
